@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.character-panel {
+  max-width: none !important;
+  width: fit-content !important;
+}
+
+.left-weapon-swap-background { 
+  position: absolute;
+  bottom: 364px;
+  left: 190px;
+}
+
+.right-weapon-swap-background {
+  position: absolute;
+  bottom: 364px;
+  right: 256px;
+}
+
+.item {
+  background-color: RGBA(0,0,255,0.2);
+  position: absolute;
+  display: flex;
+}
+
+.item-image {
+  margin: auto;
+  width: 100%;
+}
+
+.belt {
+  left: 269px;
+  bottom: 143px;
+}
+
+.bodyarmour {
+  left: 268px;
+  bottom: 201px;
+}
+
+.ring {
+  left: 198px;
+  bottom: 248px;
+}
+
+.ring2 {
+  left: 385px;
+  bottom: 248px;
+}
+
+.amulet {
+  left: 385px;
+  bottom: 307px;
+}
+
+.gloves {
+  left: 151px;
+  bottom: 142px;
+}
+
+.boots {
+  left: 384px;
+  bottom: 142px;
+}
+
+.helm {
+  left: 268px;
+  bottom: 354px;
+}
+
+.flask1 {
+  left: 200px;
+  bottom: 36px;
+}
+
+.flask2 {
+  left: 247px;
+  bottom: 36px;
+}
+
+.flask3 {
+  left: 294px;
+  bottom: 36px;
+}
+
+.flask4 {
+  left: 341px;
+  bottom: 36px;
+}
+
+.flask5 {
+  left: 388px;
+  bottom: 36px;
+}
+
+.weapon {
+  left: 81px;
+  bottom: 248px;
+  height: 188px;
+}
+
+.offhand {
+  left: 454px;
+  bottom: 248px;
+  height: 188px;
+}
+
+.weapon2 {
+  left: 194px;
+  bottom: 369px;
+  width: 37px;
+  height: 71px;
+}
+
+.offhand2 {
+  right: 261px;
+  bottom: 369px;
+  width: 37px;
+  height: 71px;
+}
