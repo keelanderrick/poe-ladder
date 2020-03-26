@@ -15,6 +15,7 @@ code {
 .character-panel {
   max-width: none !important;
   width: fit-content !important;
+  width: -moz-fit-content !important;
 }
 
 .left-weapon-swap-background { 
