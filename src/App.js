@@ -31,30 +31,23 @@ class App extends Component {
   }
 
   componentDidMount () {
-    fetch('http://api.pathofexile.com/leagues')
+    fetch('https://api.pathofexile.com/leagues')
     .then(res => res.json())
     .then((data) => {
       this.setState({ladders: data})
     })
     .catch(console.log)
 
-    fetch(`http://api.pathofexile.com/ladders/${this.state.selectedLadder}`)
+    fetch(`https://api.pathofexile.com/ladders/${this.state.selectedLadder}`)
     .then(res => res.json())
     .then((data) => {
       this.setState({entries: data.entries})
     })
     .catch(console.log)
-
-    /*fetch('http://cors-anywhere.herokuapp.com/https://www.pathofexile.com/character-window/get-items?character=SteelTryingAgain&accountName=steelmage')
-    .then(res => res.json())
-    .then((data) => {
-      console.log("success");
-    })
-    .catch(console.log) */
   }
 
   handleLadderChange (newId) {
-    fetch(`http://api.pathofexile.com/ladders/${newId}`)
+    fetch(`https://api.pathofexile.com/ladders/${newId}`)
     .then(res => res.json())
     .then((data) => {
       this.setState({entries: data.entries})

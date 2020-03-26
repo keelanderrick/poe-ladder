@@ -51,7 +51,7 @@ class CharacterPanel extends Component {
 
     componentDidUpdate(prevProps) {
         if(this.props.accountName !== prevProps.accountName && this.props.accountName !== '')
-            fetch(`http://guarded-falls-96614.herokuapp.com/https://www.pathofexile.com/character-window/get-items?character=${this.props.characterName}&accountName=${this.props.accountName}`)
+            fetch(`https://guarded-falls-96614.herokuapp.com/https://www.pathofexile.com/character-window/get-items?character=${this.props.characterName}&accountName=${this.props.accountName}`)
             .then(res => res.json())
             .then((data) => {
                 this.setState({items: data.items, loaded: true});
