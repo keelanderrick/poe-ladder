@@ -5,7 +5,8 @@ import CharacterInventory from './characterInventory';
 class CharacterPanel extends Component {
     state = {
         items: [],
-        loaded: false
+        loaded: false,
+        failedToLoad: false
     }
 
     render () {
@@ -21,6 +22,22 @@ class CharacterPanel extends Component {
                     <Modal.Body >
                         {this.props.accountName}
                         Loading items...
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={this.onClose.bind(this)}>Close</Button>
+                    </Modal.Footer>
+                </Modal>
+            )
+
+        if(this.state.failedToLoad === true)
+            return(
+                <Modal show={true} onHide={this.onClose.bind(this)} dialogClassName="character-panel">
+                    <Modal.Header closeButton>
+                        <Modal.Title>{this.props.characterName}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body >
+                        {this.props.accountName}
+                        Failed to load items
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.onClose.bind(this)}>Close</Button>
@@ -45,7 +62,7 @@ class CharacterPanel extends Component {
     }
 
     onClose (e) {
-        this.setState({loaded: false, items: []})
+        this.setState({failedToLoad: false, loaded: false, items: []})
         this.props.onClose(e);
     }
 
@@ -54,11 +71,12 @@ class CharacterPanel extends Component {
             fetch(`https://guarded-falls-96614.herokuapp.com/https://www.pathofexile.com/character-window/get-items?character=${this.props.characterName}&accountName=${this.props.accountName}`)
             .then(res => res.json())
             .then((data) => {
-                this.setState({items: data.items, loaded: true});
+                if(data.hasOwnProperty('items')) 
+                    this.setState({items: data.items, loaded: true, failedToLoad: false})
+                else this.setState({failedToLoad: true, loaded: true})
             })
             .catch(console.log) 
     }
-
 }
 
 export default CharacterPanel;

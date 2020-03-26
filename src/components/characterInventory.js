@@ -14,7 +14,7 @@ class CharacterInventory extends Component {
                 <Image src='/img/inventory-background.png' />
                 <Image className='left-weapon-swap-background' src='/img/mini-inventory-background.png' />
                 <Image className='right-weapon-swap-background' src='/img/mini-inventory-background.png' />
-                <Button onClick={this.onWeaponSwap.bind(this)}>Swap</Button>
+                <Button className='weapon-swap-button'onClick={this.onWeaponSwap.bind(this)}>Swap</Button>
                 {this.state.items.map((item) => {
                     if(item.inventoryId === 'Flask') {
                         this.flaskIndex++;

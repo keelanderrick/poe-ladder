@@ -18,6 +18,12 @@ code {
   width: -moz-fit-content !important;
 }
 
+.weapon-swap-button {
+  position: absolute; 
+  bottom: 446px;
+  left: 467px;
+}
+
 .left-weapon-swap-background { 
   position: absolute;
   bottom: 364px;
@@ -27,7 +33,7 @@ code {
 .right-weapon-swap-background {
   position: absolute;
   bottom: 364px;
-  right: 256px;
+  left: 391px;
 }
 
 .item {
@@ -38,7 +44,8 @@ code {
 
 .item-image {
   margin: auto;
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .belt {
@@ -110,9 +117,11 @@ code {
   left: 81px;
   bottom: 248px;
   height: 188px;
+  width: 94px;
 }
 
 .offhand {
+  width: 94px;
   left: 454px;
   bottom: 248px;
   height: 188px;
@@ -126,7 +135,7 @@ code {
 }
 
 .offhand2 {
-  right: 261px;
+  left: 395px;
   bottom: 369px;
   width: 37px;
   height: 71px;
