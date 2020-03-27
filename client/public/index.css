@@ -1,0 +1,226 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.tooltip {
+  max-width: 100%;
+  width: fit-content !important;
+}
+
+.tooltip-inner {
+  max-width: 100% !important;
+}
+
+.character-panel {
+  max-width: none !important;
+  width: fit-content !important;
+  width: -moz-fit-content !important;
+}
+
+.item-tooltip-name0 {
+  background-color: RGB(49,49,49);
+  white-space: pre-wrap;
+  color: RGB(200,200,190);
+}
+
+.item-tooltip-name1 {
+  background-color: RGB(26,27,43);
+  white-space: pre-wrap;
+  color: RGB(135,135,255);
+}
+
+.item-tooltip-name2 {
+  background-color: RGB(70,46,28);
+  white-space: pre-wrap;
+  color: RGB(189, 189, 87);
+}
+
+.item-tooltip-name3 {
+  background-color: RGB(65,24,9);
+  white-space: pre-wrap;
+  color: RGB(182, 98, 27);
+}
+
+.item-tooltip-divider {
+  border: 0;
+  height: 1px;
+  margin-bottom: 3px;
+  margin-top: 5px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+}
+
+.ladder-character-name {
+  padding: 0px !important;
+  margin: 0px !important;
+  border: none !important;
+  vertical-align: top !important;
+}
+
+.item-tooltip-properties {
+  color: RGB(111,111,111);
+}
+
+.item-tooltip-properties7 {
+  color: purple;
+}
+
+.item-tooltip-properties6 {
+  color: yellow;
+}
+
+.item-tooltip-properties4 {
+  color: blue;
+}
+
+.item-tooltip-properties5 {
+  color: red;
+}
+
+.item-tooltip-properties1 {
+  color: RGB(135,135,254);
+}
+
+.item-tooltip-properties0 {
+  color: white;
+}
+
+.item-tooltip-mods {
+  color: RGB(135,135,254);
+}
+
+.item-tooltip-crafted-mods {
+  color: RGB(179,212,235)
+}
+
+.weapon-swap-button {
+  position: absolute; 
+  bottom: 446px;
+  left: 467px;
+}
+
+.left-weapon-swap-background { 
+  position: absolute;
+  bottom: 364px;
+  left: 190px;
+}
+
+.right-weapon-swap-background {
+  position: absolute;
+  bottom: 364px;
+  left: 391px;
+}
+
+.item {
+  background-color: RGBA(0,0,255,0.2);
+  position: absolute;
+  display: flex;
+}
+
+.item-image {
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.belt {
+  left: 269px;
+  bottom: 143px;
+}
+
+.bodyarmour {
+  left: 268px;
+  bottom: 201px;
+}
+
+.ring {
+  left: 198px;
+  bottom: 248px;
+}
+
+.ring2 {
+  left: 385px;
+  bottom: 248px;
+}
+
+.amulet {
+  left: 385px;
+  bottom: 307px;
+}
+
+.gloves {
+  left: 151px;
+  bottom: 142px;
+}
+
+.boots {
+  left: 384px;
+  bottom: 142px;
+}
+
+.helm {
+  left: 268px;
+  bottom: 354px;
+}
+
+.flask1 {
+  left: 200px;
+  bottom: 36px;
+}
+
+.flask2 {
+  left: 247px;
+  bottom: 36px;
+}
+
+.flask3 {
+  left: 294px;
+  bottom: 36px;
+}
+
+.flask4 {
+  left: 341px;
+  bottom: 36px;
+}
+
+.flask5 {
+  left: 388px;
+  bottom: 36px;
+}
+
+.weapon {
+  left: 81px;
+  bottom: 248px;
+  height: 188px;
+  width: 94px;
+}
+
+.offhand {
+  width: 94px;
+  left: 454px;
+  bottom: 248px;
+  height: 188px;
+}
+
+.weapon2 {
+  left: 194px;
+  bottom: 369px;
+  width: 37px;
+  height: 71px;
+}
+
+.offhand2 {
+  left: 395px;
+  bottom: 369px;
+  width: 37px;
+  height: 71px;
+}
