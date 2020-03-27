@@ -12,10 +12,94 @@ code {
     monospace;
 }
 
+.tooltip {
+  max-width: 100%;
+  width: fit-content !important;
+}
+
+.tooltip-inner {
+  max-width: 100% !important;
+}
+
 .character-panel {
   max-width: none !important;
   width: fit-content !important;
   width: -moz-fit-content !important;
+}
+
+.item-tooltip-name0 {
+  background-color: RGB(49,49,49);
+  white-space: pre-wrap;
+  color: RGB(200,200,190);
+}
+
+.item-tooltip-name1 {
+  background-color: RGB(26,27,43);
+  white-space: pre-wrap;
+  color: RGB(135,135,255);
+}
+
+.item-tooltip-name2 {
+  background-color: RGB(70,46,28);
+  white-space: pre-wrap;
+  color: RGB(189, 189, 87);
+}
+
+.item-tooltip-name3 {
+  background-color: RGB(65,24,9);
+  white-space: pre-wrap;
+  color: RGB(182, 98, 27);
+}
+
+.item-tooltip-divider {
+  border: 0;
+  height: 1px;
+  margin-bottom: 3px;
+  margin-top: 5px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+}
+
+.ladder-character-name {
+  padding: 0px !important;
+  margin: 0px !important;
+  border: none !important;
+  vertical-align: top !important;
+}
+
+.item-tooltip-properties {
+  color: RGB(111,111,111);
+}
+
+.item-tooltip-properties7 {
+  color: purple;
+}
+
+.item-tooltip-properties6 {
+  color: yellow;
+}
+
+.item-tooltip-properties4 {
+  color: blue;
+}
+
+.item-tooltip-properties5 {
+  color: red;
+}
+
+.item-tooltip-properties1 {
+  color: RGB(135,135,254);
+}
+
+.item-tooltip-properties0 {
+  color: white;
+}
+
+.item-tooltip-mods {
+  color: RGB(135,135,254);
+}
+
+.item-tooltip-crafted-mods {
+  color: RGB(179,212,235)
 }
 
 .weapon-swap-button {

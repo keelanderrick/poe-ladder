@@ -24,30 +24,41 @@ class InventoryItem extends Component {
     renderTooltip (props) {
         return (
             <Tooltip id="tooltip" {...props}>
-                <div>{this.props.item.name}</div>
-                <div>{this.props.item.typeLine}</div>
+                <div className={'item-tooltip-name'+this.props.item.frameType}>
+                    {this.props.item.name !== "" && this.props.item.name + '\n'}
+                    {this.props.item.typeLine}
+                </div>
                 {this.props.item.properties && this.props.item.properties.map((property) => {
                     if(property.values.length > 0) {
                         if(property.displayMode === 0)
-                            return(<div key={property.name}>{property.name}: {property.values[0][0]}</div>)
+                            return(<div className="item-tooltip-properties" key={property.name}>{property.name}: {property.values.map((value, i) => {
+                                if(i !== 0)
+                                    return(<span>, <span key={i} className={'item-tooltip-properties'+value[1]}>{value[0]}</span></span>)
+                                else
+                                    return(<span key={i} className={'item-tooltip-properties'+value[1]}>{value[0]}</span>)
+                            })}</div>)
                         if(property.displayMode === 3) {
                             var ret = property.name;
                             for(var i = 0; i < property.values.length; i++) {
                                 ret = ret.replace(`%${i}`, property.values[i][0])
                             }
-                            return(<div key={property.name}>{ret}</div>);
+                            return(<div className="item-tooltip-properties" key={property.name}><span className={'item-tooltip-properties'+property.values[0][1]}>{ret}</span></div>);
                         }
                     }
-                    return(<div key={property.name}>{property.name}</div>)
+                    return(<div className="item-tooltip-properties" key={property.name}>{property.name}</div>)
+                })}
+                {this.props.item.properties && <hr className="item-tooltip-divider" />}
+                {this.props.item.implicitMods && this.props.item.implicitMods.map((mod) => {
+                    return(<div className="item-tooltip-mods" key={mod}>{mod}<hr className="item-tooltip-divider" /></div>)
                 })}
                 {this.props.item.utilityMods && this.props.item.utilityMods.map((mod) => {
-                    return(<div key={mod}>{mod}</div>)
+                    return(<div className="item-tooltip-mods" key={mod}>{mod}</div>)
                 })}
                 {this.props.item.explicitMods && this.props.item.explicitMods.map((mod) => {
-                    return(<div key={mod}>{mod}</div>)
+                    return(<div className="item-tooltip-mods"  key={mod}>{mod}</div>)
                 })}
                 {this.props.item.craftedMods && this.props.item.craftedMods.map((mod) => {
-                    return(<div key={mod}>{mod}</div>)
+                    return(<div className="item-tooltip-crafted-mods"  key={mod}>{mod}</div>)
                 })}
             </Tooltip>
         )

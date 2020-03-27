@@ -1,31 +1,46 @@
 import React, {Component} from 'react'
-import {Card, Button} from 'react-bootstrap';
+import {Table, Button} from 'react-bootstrap';
 
 class LadderEntry extends Component {
     render () {
         return (
             <div>
-                <center><h1>Ladder</h1></center>
-                {this.props.entries.map((entry) => (
-                    this.renderEntry(entry)
-                ))}
+                <center><h1>{this.props.selectedLadder}</h1></center>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Class</th>
+                            <th>Character</th>
+                            <th>Level</th>
+                            <th>Alive</th>
+                            <th>Account</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.entries.map((entry) => (
+                            this.renderEntry(entry)
+                        ))}
+                    </tbody>
+                </Table>
             </div>
         )
     }
 
     renderEntry (entry) {
-        var bgColor = "success";
+        var deadText = "Alive";
         if(entry.dead === true)
-            bgColor = "danger";
+            deadText = "Dead";
     
         return (
-            <Card key={entry.character.name} bg={bgColor}>
-                <Card.Body>
-                    <Card.Title ><Button variant="light" value={entry} onClick={this.selectCharacter.bind(this, entry)}>{entry.character.name}</Button></Card.Title>
-                    <Card.Subtitle>{entry.character.class}</Card.Subtitle>
-                    <Card.Text className="card-text">{entry.character.level}</Card.Text>
-                </Card.Body>
-            </Card>
+            <tr key={entry.character.name}>
+                <td>{entry.rank}</td>
+                <td>{entry.character.class}</td>
+                <td><Button value={entry} className="ladder-character-name" variant="link" onClick={this.selectCharacter.bind(this, entry)}>{entry.character.name}</Button></td>
+                <td>{entry.character.level}</td>
+                <td>{deadText}</td>
+                <td>{entry.account.name}</td>
+            </tr>
         )
     } 
 

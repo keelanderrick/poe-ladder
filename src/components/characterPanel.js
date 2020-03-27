@@ -12,47 +12,22 @@ class CharacterPanel extends Component {
     render () {
         if(this.props.characterName === '')
             return(null)
+        
+        var body = null;
 
         if(this.state.loaded === false)
-            return(
-                <Modal show={true} onHide={this.onClose.bind(this)} dialogClassName="character-panel">
-                    <Modal.Header closeButton>
-                        <Modal.Title>{this.props.characterName}</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body >
-                        {this.props.accountName}
-                        Loading items...
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={this.onClose.bind(this)}>Close</Button>
-                    </Modal.Footer>
-                </Modal>
-            )
+            body = <div>Loading items...</div>
+        else if(this.state.failedToLoad === true)
+            body = <div>Failed to load items</div>
+        else body = <CharacterInventory items={this.state.items} />
 
-        if(this.state.failedToLoad === true)
-            return(
-                <Modal show={true} onHide={this.onClose.bind(this)} dialogClassName="character-panel">
-                    <Modal.Header closeButton>
-                        <Modal.Title>{this.props.characterName}</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body >
-                        {this.props.accountName}
-                        Failed to load items
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={this.onClose.bind(this)}>Close</Button>
-                    </Modal.Footer>
-                </Modal>
-            )
-
-        return (
-            <Modal show={true} onHide={this.onClose.bind(this)} dialogClassName="character-panel">
+        return(
+            <Modal style={{'maxWidth': '100%', 'maxHeight': '100%', 'overflow': 'auto'}} show={true} onHide={this.onClose.bind(this)} dialogClassName="character-panel">
                 <Modal.Header closeButton>
                     <Modal.Title>{this.props.characterName}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body >
-                    {this.props.accountName}
-                    <CharacterInventory items={this.state.items} />
+                <Modal.Body>
+                    {body}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={this.onClose.bind(this)}>Close</Button>

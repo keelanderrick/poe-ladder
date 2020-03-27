@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div>
         <LadderSelector ladders={this.state.ladders} onLadderChange={this.handleLadderChange} />
-        <LadderEntry entries={this.state.entries} onCharacterSelect={this.handleCharacterSelect} />
+        <LadderEntry selectedLadder={this.state.selectedLadder} entries={this.state.entries} onCharacterSelect={this.handleCharacterSelect} />
         <CharacterPanel onClose={this.onCloseCharacterPanel} accountName={this.state.selectedAccountName} characterName={this.state.selectedCharacter} />
       </div>
     );
