@@ -3,6 +3,8 @@ import {Table, Button} from 'react-bootstrap';
 
 class LadderEntry extends Component {
     render () {
+        if(!this.props.selectedLadder)
+            return (<div>No ladder selected</div>)
         return (
             <div>
                 <center><h1>{this.props.selectedLadder}</h1></center>
@@ -18,7 +20,7 @@ class LadderEntry extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.entries.map((entry) => (
+                        {this.props.entries && this.props.entries.map((entry) => (
                             this.renderEntry(entry)
                         ))}
                     </tbody>

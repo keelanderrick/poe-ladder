@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/keelanderrick/poe-ladder#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.2"
   }
 }

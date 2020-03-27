@@ -31,14 +31,14 @@ class App extends Component {
   }
 
   componentDidMount () {
-    fetch('https://api.pathofexile.com/leagues')
+    fetch('/api/ladders')
     .then(res => res.json())
     .then((data) => {
       this.setState({ladders: data})
     })
     .catch(console.log)
 
-    fetch(`https://api.pathofexile.com/ladders/${this.state.selectedLadder}`)
+    fetch(`/api/ladders/${this.state.selectedLadder}`)
     .then(res => res.json())
     .then((data) => {
       this.setState({entries: data.entries})
@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   handleLadderChange (newId) {
-    fetch(`https://api.pathofexile.com/ladders/${newId}`)
+    fetch(`/api/ladders/${newId}`)
     .then(res => res.json())
     .then((data) => {
       this.setState({entries: data.entries})

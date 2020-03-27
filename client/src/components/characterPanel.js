@@ -43,14 +43,14 @@ class CharacterPanel extends Component {
 
     componentDidUpdate(prevProps) {
         if(this.props.accountName !== prevProps.accountName && this.props.accountName !== '')
-            fetch(`https://guarded-falls-96614.herokuapp.com/https://www.pathofexile.com/character-window/get-items?character=${this.props.characterName}&accountName=${this.props.accountName}`)
+            fetch(`/api/get-items/${this.props.accountName}/${this.props.characterName}`)
             .then(res => res.json())
             .then((data) => {
                 if(data.hasOwnProperty('items')) 
                     this.setState({items: data.items, loaded: true, failedToLoad: false})
                 else this.setState({failedToLoad: true, loaded: true})
             })
-            .catch(console.log) 
+            .catch(console.log)
     }
 }
 
