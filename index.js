@@ -8,7 +8,7 @@ const app = express();
 const mongo = mongodb.MongoClient;
 var dbUrl = `mongodb+srv://${process.env.REACT_APP_DB_USERNAME}:${process.env.REACT_APP_DB_PASSWORD}@cluster0-tht63.gcp.mongodb.net/data?retryWrites=true://localhost:27017/data`
 
-mongo.connect(dbUrl, {
+/*mongo.connect(dbUrl, {
         useUnifiedTopology: true
     })
     .then(client => {
@@ -82,7 +82,7 @@ mongo.connect(dbUrl, {
         });
 
     })
-    .catch(console.error);
+    .catch(console.error);*/
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
