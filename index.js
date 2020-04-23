@@ -15,11 +15,6 @@ mongo.connect(dbUrl, {
         const db = client.db('')
         const charactersCollection = db.collection('characters')
 
-        // Serve static files from the React app
-        app.use(express.static(path.join(__dirname, 'client/build')));
-
-
-
         app.get('/api/import', async (req, res) => {
             try {
                 const response = await fetch(`https://api.pathofexile.com/ladders/SSF Delirium`)
@@ -88,6 +83,9 @@ mongo.connect(dbUrl, {
 
     })
     .catch(console.error);
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 const port = process.env.PORT || 6000;
 app.listen(port);
