@@ -23,7 +23,7 @@ class App extends React.Component {
   }
   
   componentDidMount() {
-    fetch('http://api.pathofexile.com/leagues')
+    fetch('https://api.pathofexile.com/leagues')
       .then(res => res.json())
       .then((data) => {
         this.setState({
@@ -36,7 +36,7 @@ class App extends React.Component {
   }
 
   onLadderChange (newLadder) {
-    fetch(`https://guarded-falls-96614.herokuapp.com/http://api.pathofexile.com/ladders/${newLadder}`)
+    fetch(`https://guarded-falls-96614.herokuapp.com/https://api.pathofexile.com/ladders/${newLadder}`)
       .then(res => res.json())
       .then((data) => {
         this.setState({
