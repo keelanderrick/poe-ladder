@@ -10,7 +10,7 @@ class LadderSelector extends React.Component {
     render() {
         return (
             <Dropdown as={NavItem}>
-                <Dropdown.Toggle id='ladder-selector'>
+                <Dropdown.Toggle variant='secondary' id='ladder-selector'>
                     {this.props.selectedLadder}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
