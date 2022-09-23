@@ -19,7 +19,7 @@ class Ladder extends React.Component {
                         return(
                             <tr key={entry.character.name}>
                                 <td>{entry.rank}</td>
-                                <td><a href='/#' value={entry} onClick={this.selectCharacter.bind(this, entry)}>{entry.character.name}</a></td>
+                                <td><a href='javascript:void(0)' value={entry} onClick={this.selectCharacter.bind(this, entry)}>{entry.character.name}</a></td>
                                 <td>{entry.account.name}</td>
                                 <td>{entry.character.level}</td>
                                 <td>{entry.character.class}</td>
