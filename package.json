@@ -21,7 +21,7 @@
   "homepage": "https://github.com/keelanderrick/poe-ladder#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.5.6",
     "node-fetch": "^2.6.0",
     "request": "^2.88.2",
