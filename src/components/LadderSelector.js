@@ -15,14 +15,14 @@ class LadderSelector extends React.Component {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     {this.props.ladders.map((ladder) => {
-                        return(<Dropdown.Item as="button" key={ladder.id} value={ladder.id} onClick={this.changeLadder}>{ladder.id}</Dropdown.Item>)
+                        return (<Dropdown.Item as="button" key={ladder.id} value={ladder.id} onClick={this.changeLadder}>{ladder.id}</Dropdown.Item>)
                     })}
                 </Dropdown.Menu>
             </Dropdown>
         )
     }
 
-    changeLadder (evt) {
+    changeLadder(evt) {
         this.props.onLadderChange(evt.target.value);
     }
 }

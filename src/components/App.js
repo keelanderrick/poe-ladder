@@ -24,14 +24,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header ladders={this.state.ladders} selectedLadder={this.state.selectedLadder} onLadderChange={this.onLadderChange} />
-        <Ladder entries={this.state.entries} onSelectCharacter={this.onSelectCharacter}/>
+        <Ladder entries={this.state.entries} onSelectCharacter={this.onSelectCharacter} />
         <CharacterPanel onClose={this.onCloseCharacterPanel} selectedCharacter={this.state.selectedCharacter} />
       </div>
     )
   }
-  
+
   componentDidMount() {
-    fetch('https://api.pathofexile.com/leagues')
+    fetch('/api/leagues/')
       .then(res => res.json())
       .then((data) => {
         this.setState({
@@ -40,11 +40,11 @@ class App extends React.Component {
       })
       .catch(console.log)
 
-      this.onLadderChange ("Standard")
+    this.onLadderChange("Standard")
   }
 
-  onLadderChange (newLadder) {
-    fetch(`https://guarded-falls-96614.herokuapp.com/https://api.pathofexile.com/ladders/${newLadder}?type=league&limit=200`)
+  onLadderChange(newLadder) {
+    fetch(`/api/ladders/${newLadder}?type=league&limit=200`)
       .then(res => res.json())
       .then((data) => {
         this.setState({
@@ -53,16 +53,16 @@ class App extends React.Component {
       })
       .catch(console.log)
 
-      this.setState({selectedLadder: newLadder})
+    this.setState({ selectedLadder: newLadder })
   }
 
-  onSelectCharacter (character) {
+  onSelectCharacter(character) {
     this.setState({
       selectedCharacter: character
     })
   }
 
-  onCloseCharacterPanel () {
+  onCloseCharacterPanel() {
     this.setState({
       selectedCharacter: ''
     })
