@@ -1,0 +1,53 @@
+const express = require('express')
+const cors = require('cors')
+const request = require('request')
+const fetch = require('node-fetch')
+const app = express()
+app.use(cors())
+const port = 3001
+
+app.get('/api/leagues', async (req, res) => {
+	//	fetch('https://api.pathofexile.com/leagues')
+        //.then(res => res.json())
+        //.then((data) => {
+        //    res.send(data)
+        //})
+        //.catch(res.send(res)http://54.90.246.11/)
+	try {
+		const apiResponse = await fetch('https://api.pathofexile.com/leagues')
+		const apiResponseJson = await apiResponse.json()
+		res.send(apiResponseJson)
+	} catch (err) {
+		console.log(err)
+		res.status(500).send('something happened :(')
+	}
+})
+
+app.get('/api/character-window', (req, res) => {
+    accountName = req.query.accountName
+    characterName = req.query.character
+    console.log(accountName)
+    console.log(characterName)
+    fetch(`https://www.pathofexile.com/character-window/get-items?accountName=${accountName}&character=${characterName}`, { headers: { 'Accept': 'application/json' } })
+        .then(res => res.json())
+        .then((data) => {
+            res.send(data)
+        })
+        .catch(console.log)
+})
+
+app.get('/api/ladders/:id', (req, res) => {
+    ladder = req.params.id
+    type = 'league'
+    limit = '200'
+    fetch(`https://api.pathofexile.com/ladders/${ladder}?type=${type}&limit=${limit}`)
+        .then(res => res.json())
+        .then((data) => {
+            res.send(data)
+        })
+        .catch(console.log)
+})
+
+app.listen(port, () => {
+    console.log(`listening on port${port}`)
+})
